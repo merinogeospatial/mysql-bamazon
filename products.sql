@@ -18,16 +18,16 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Spiderman Undies", "Clothing", 6.99, 8);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("iPad", "Electronics", 699.99, 18);
+VALUES ("iPad", "Electronics", 499.99, 18);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Nintendo Switch", "Electronics", 399.99, 9);
+VALUES ("Nintendo Switch", "Electronics", 299.99, 9);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Meme Painting", "Home", 14.99, 5);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("New Macbook Pro", "Electronics", 6000, 1);
+VALUES ("New Macbook Pro", "Electronics", 6700, 1);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Gatorade 12-Pack", "Food and Grocery", 8.99, 75);

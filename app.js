@@ -31,6 +31,12 @@ function start() {
     ]).then(function(answer){
         console.log(answer.chosenID, answer.chosenQuantity);
 
+        db.query(
+            'SELECT * FROM products WHERE item_id = ?', answer.chosenID, function(err, res) {
+                
+            }
+        )
+
         //---- Let's put to handle ID matching, checking if there is enough, then loggin the total of their transaction
         //  We will need to query to return a list of objects, then do a for loop + if statement to catch a matching id.
         // OR a better way would be to use a ? wild card in the query and have answer.chosenID fulfull that ? query
