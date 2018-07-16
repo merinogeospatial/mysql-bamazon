@@ -30,12 +30,8 @@ function start() {
         }
     ]).then(function(answer){
         console.log(answer.chosenID, answer.chosenQuantity);
-
-        db.query(
-            'SELECT * FROM products WHERE item_id = ?', answer.chosenID, function(err, res) {
-                
-            }
-        )
+        getProduct(answer.chosenID,answer.chosenQuantity);
+       
 
         //---- Let's put to handle ID matching, checking if there is enough, then loggin the total of their transaction
         //  We will need to query to return a list of objects, then do a for loop + if statement to catch a matching id.
@@ -51,7 +47,21 @@ function start() {
         // db.end();
 
 
-    })
+    });
+}
+
+function getProduct(chosenID,quantity) {
+    db.query(
+        'UPDATE products SET stock_quantity = (stock_quantity - ? ) WHERE item_id = ?', [quantity,chosenID], function(err, res) {
+            console.log("You bought " + quantity + " of item ID: " + chosenID);
+        }
+    )
+
+    db.query(
+        'SELECT price FROM products WHERE item_id = ?', chosenID, function(err, res) {
+            console.log("The total price is " + (parseFloat(res[0].price) * parseFloat(quantity)));
+        }
+    )
 }
 
 start();
