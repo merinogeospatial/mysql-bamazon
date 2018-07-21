@@ -39,14 +39,17 @@ function getProduct(chosenID,quantity) {
     db.query(
         'SELECT stock_quantity, price FROM products WHERE item_id = ?', chosenID, function(err, res) {
             if (res[0].stock_quantity < quantity) {
+                console.log("                   ");
                 console.log("Sorry, we don't have enough!");
             }
             else {
                 db.query(
                     'UPDATE products SET stock_quantity = (stock_quantity - ? ) WHERE item_id = ?', [quantity,chosenID], function(err, res) {
+                        console.log("                   ");
                         console.log("You bought " + quantity + " of item ID: " + chosenID);
                     }
                 )
+                console.log("                   ");
                 console.log("The total price is " + (parseFloat(res[0].price) * parseFloat(quantity)));
             }
         }
