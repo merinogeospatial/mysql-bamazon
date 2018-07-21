@@ -62,7 +62,7 @@ function showTable() {
  
 // instantiate
 var table = new Table({
-    head: ['id', 'product', 'department', 'stock']
+    head: ['id', 'product', 'department','price', 'stock']
   , colWidths: [5, 20, 20,20]
 });
  
@@ -73,7 +73,7 @@ var table = new Table({
         for (let i = 0; i < res.length; i++) {
             
             table.push(
-                [res[i].item_id.toString(), res[i].product_name.toString(), res[i].department_name.toString(), res[i].stock_quantity.toString()]
+                [res[i].item_id.toString(), res[i].product_name.toString(), res[i].department_name.toString(), res[i].price.toString(), res[i].stock_quantity.toString()]
             );
         } 
 
