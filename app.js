@@ -63,7 +63,7 @@ function showTable() {
 // instantiate
 var table = new Table({
     head: ['id', 'product', 'department','price', 'stock']
-  , colWidths: [5, 20, 20,20]
+  , colWidths: [5, 20, 20,20, 20]
 });
  
 // table is an Array, so you can `push`, `unshift`, `splice` and friends
